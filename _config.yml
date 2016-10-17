@@ -1,0 +1,96 @@
+# --- Serving options --- #
+
+# url is the full website URL
+# baseurl is the website's URL without the hostname
+
+url: "https://workforcestudio.github.io/study.sna"
+baseurl: "/study.sna"
+
+# Brief name and description of the site
+title: Chad Lab
+description: "Social Network Study"
+
+# --- Outputting options --- #
+# More information can be found on Jekyll's site
+timezone: "America/Vancouver"
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title
+paginate: 5
+paginate_path: "/page:num/"
+
+# --- Navigation bar options --- #
+
+# Image to show in the navigation bar - image must be a square (width = height)
+# Remove this parameter if you don't want an image in the navbar
+avatar: "/img/chad.png"
+
+# List of links in the navigation bar
+navbar-links:
+  Home: "index"
+  About: "/contents/about"
+  Members: "/contents/members"
+  Lecture: "/contents/lecture"
+  Projects: "/contents/projects"
+  Presentation: "/contents/presentation"
+  Gallary: "/contents/gallary"
+  Template: "/contents/template"
+  nav-search: "/contents/search"
+
+# --- Footer options --- #
+
+# Change all these values or delete the ones you don't want.
+# Important: you must keep the "name" parameter, everything else you can remove
+author:
+  name: Chad (Chungil Chae)
+  email: "chadchae@gmail.com"
+  facebook: "chadchae"
+  github: chadchae
+  twitter: chadchae
+  linkedin: "in/chadchae"
+  
+# Select which links to show in the footer  
+footer-links-active:
+  rss: true
+  facebook: true
+  email: true
+  twitter: true
+  github: true
+  linkedin: true
+  stackoverflow: false
+
+# How to display the link to the website in the footer
+# Remove this if you don't want a link in the footer
+url-pretty: "https://workforcestudio.github.io/study.sna" 
+
+# --- Misc --- #
+
+# Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
+disqus: "chadchaegithubio"
+
+# Fill in your Google Analytics ID to track your website using GA
+google_analytics: "UA-58560051-1"  # Your Google Analytics ID
+
+# --- Don't need to touch anything below here (but you can if you want) --- #
+
+# Default YAML values (more information on Jekyll's site)  
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true  # add comments to all blog posts 
+  -
+    scope:
+      path: "" # all files
+    values:
+      layout: "default"
+
+# Exclude these files from production site
+exclude:
+  - CNAME
+  - LICENSE
+  - README.md
+  - template_post.md
+  - template_page.md

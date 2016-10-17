@@ -1,0 +1,82 @@
+---
+layout: page
+title: "Workforce Analytics"
+subtitle: Workforce Data Analytics
+css: "/css/index.css"
+meta-title: "Chad (Chungil Chae)"
+meta-description: "Graduate student in WFED / CIED with a Bachelor of Business."
+bigimg:
+  - "/img/big-imgs/1.jpeg"  : " ()"
+  - "/img/big-imgs/2.jpeg"  : " ()"
+  - "/img/big-imgs/3.jpeg"  : " ()"
+  - "/img/big-imgs/4.jpeg"  : " ()"
+  - "/img/big-imgs/5.jpeg"  : " ()"
+  - "/img/big-imgs/6.jpeg"  : " ()"
+  - "/img/big-imgs/7.jpeg"  : " ()"
+  - "/img/big-imgs/8.jpeg"  : " ()"
+  - "/img/big-imgs/9.jpeg"  : " ()"
+  - "/img/big-imgs/10.jpeg" : " ()"
+  - "/img/big-imgs/11.jpeg" : " ()"
+  - "/img/big-imgs/12.jpeg" : " ()"
+  - "/img/big-imgs/13.jpeg" : " ()"
+  - "/img/big-imgs/14.jpeg" : " ()"
+  - "/img/big-imgs/15.jpgg" : " ()"
+  - "/img/big-imgs/16.jpeg" : " ()"
+  - "/img/big-imgs/17.jpeg" : " ()" 
+  - "/img/big-imgs/18.jpeg" : " ()"
+  - "/img/big-imgs/19.jpeg" : " ()"
+  - "/img/big-imgs/20.jpeg" : " ()"
+  - "/img/big-imgs/21.jpeg" : " ()"
+  - "/img/big-imgs/22.jpeg" : " ()"
+  - "/img/big-imgs/23_.jpeg" : " ()"
+  - "/img/big-imgs/24.jpeg" : " ()"
+  - "/img/big-imgs/25.jpeg" : " ()"
+  - "/img/big-imgs/26.jpeg" : " ()"
+  - "/img/big-imgs/27.jpeg" : " ()"
+  - "/img/big-imgs/28.jpeg" : " ()" 
+  - "/img/big-imgs/29.jpeg" : " ()"
+  - "/img/big-imgs/30.jpeg" : " ()"
+
+---
+<div class="index-posts-title">Blog posts:</div>
+
+<div class="posts-list">
+  {% for post in paginator.posts %}
+  <article class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+    <h2 class="post-title">{{ post.title }}</h2>
+  
+    {% if post.subtitle %}
+    <h3 class="post-subtitle">
+      {{ post.subtitle }}
+    </h3>
+    {% endif %}  
+    </a>
+
+    <p class="post-meta">
+      Posted on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+  
+    <div class="post-entry">
+      {{ post.content | truncatewords: 50 | strip_html}}
+    <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
+    </div>
+  
+   </article>
+  {% endfor %}
+</div>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pager main-pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}

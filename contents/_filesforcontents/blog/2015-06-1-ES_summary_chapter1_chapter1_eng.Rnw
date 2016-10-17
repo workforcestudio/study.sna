@@ -1,0 +1,189 @@
+% --------------------문서항목
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{paralist} 
+\usepackage{verbatim}
+\usepackage{subfig} 
+\usepackage{tabularx,ragged2e,caption}
+\usepackage{indentfirst}
+\usepackage{setspace} \onehalfspacing
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{xcolor}     % for colour
+\usepackage{lipsum}     % for sample text
+\usepackage{ntheorem}   % for theorem-like environments
+\usepackage{mdframed}   % for framing
+\begin{document}
+% --------------------
+
+% --------------------타이틀
+\title{Summary of Chapter 1}
+\author{Chungil Chae (Chad)}
+\date{\today}
+% --------------------
+
+% --------------------Sweave Option
+\SweaveOpts{concordance=TRUE}
+%\SweaveOpts{prefix.string=fig}
+%\SweaveOpts{echo=TRUE}
+%\SweaveOpts{eval=TRUE}
+%\SweaveOpts{fig=TRUE}
+%\SweaveOpts{eps=TRUE}
+%\SweaveOpts{pdf=TRUE}
+%\SweaveOpts{keep.source=TRUE}
+%\SweaveOpts{concordance=TRUE}
+
+% --------------------Library
+<<echo=false, results=hide>>=
+library(lattice)
+library(xtable)
+@
+% --------------------
+
+% --------------------
+\maketitle
+% --------------------
+
+% -----------------------Abstract
+\begin{abstract}
+Research in economics, finance, management, marketing, and related discipline is becoming increasingly quantitative. Beginning students in these fields are concouraged, if not required, to take a course or two in econometircs - a field of study that has become quite popular. The purpose of this chapter is to give the beginner an overview of what econometrics is all about.
+\end{abstract}
+% ------------------------
+
+
+% -----------------------Table of Contents
+\tableofcontents
+% -----------------------
+
+% -----------------------본문  
+% -----------------------Section1
+\section{What is Econometrics?}
+Simply stated, econometrics means economic measurement. Although quantitative measurement of economic concepts such as the gross national product, unemployment, inflation, imports, exports, etc. is very important, the scope of econometrics is much broader, as can be seen from the following definitions:\par
+
+\begin{itemize}
+  \item {\bf Econometrics} may be defined as the social science in which the tools of economic theory, mathematics, and statistical inference are applied to the analysis of economic phenomena
+  \item {\bf Econometrics}, the result of a certain outlook on the role of economics, consists of the application of mathematical statistics to economic data to lend empirical support to the models constructd by mathematical economics and to obtai numerical results.
+\end{itemize}
+
+\section{Why study econometrics?}
+Economic theory makes statements or hypotheses that are mostly qualitative in nature. "provide such numerical estimates" The main concern of mathematical economics is to express economic theory in mathematical form or equations without regard to measurability or empirical verification of the theory. Econometrics, as noted earlier, is primarily intereted in teh empirical verification of economic theory(empirical testing).\par
+
+Economic statstics is mainly concerned with collecting, processing, and presenting economic data in the form of charts, diagrams, and table. The econometrician often needs special methods in view of the unique nature of most economic data, namely, the data are not usually generated as the result of a controlled experiment(depends on data that cannot be controlled directly).\par
+
+Moreover,  such data are likely to contain errors of measurement, of either omission or commission, and the econometrician may be called upon to develop special methods of analysis to deal with such errors of measurement.\par
+
+\section{The methodology of econometrics}
+Broadly speaking, econometric analysis proceeds along the folowing lines:\par
+\begin{itemize}
+  \item Statement of theory or hypothesis
+  \item Specification of the mathematical model
+  \item Specification of the statistical or econometric model
+  \item Collection of data
+  \item Estimation of the parameters of the chosen econometric model
+  \item Tests of the hypothesis derived from the model
+  \item Forecasting or prediction
+\end{itemize}
+
+\subsection{Statement of theory or hypothesis}
+The first thing the econometrician does is find out what economic theory has to say about the effect of a price change on the quantity demanded, an effect enshrined in the famous law of demand. In short, there is an inverse relationship between the price of a compodity and its quantity demanded. Note carefully that this law holds true provided all other things.
+
+\subsection{Specificaition of the mathematical model}
+The law  does not tell whether the relationshi between quantity (Q) and price (P). The relationship between Q and P is linear or nonlinear. If the relationship between Q and P is linear, it can be expressed as:
+\[ Q=B_1+B_2P \]
+This expression is an example of a linear demand function. $B_1$ and $B_2$ are known as the {\it parameters} of the function. $B_1$ is also known as the intercept; it gives the value of Q when P is zero. And $B_2$ is also known as the slope the {\it slope measures the rate of change in Q for a unit change in P}.  I the law of demand holds, we would expect $B_2 < 0$(i.e., negative) and $B_1 > 0$(generally, who wouldn't demand a good if its price were zero?) \par
+
+That equation is an example of a mathematical model of relationship between Q and P. In such a model the variable appearing on the left-hand side of the equality sign is called the {\bf dependent variable} and teh variable on teh right-had side is called the {\bf independent}, or {\bf explanatory} variable. We are trying to find out how quantity demanded changes as its price changes. Functionally, quantity demanded is dependent on price\par
+
+The job of the econometrician is to choose a suitable mathematical function or mathematical model to represent economic relationships between variables. For the present, simply note that equation is just one of the possible models to depict the relationship between Q and P
+
+\subsection{Specification of the statistical or econometric model} 
+The purely mathematical model of the demand function assumes an exact, or deterministic, relationship between quantity and price. In reality, most often, the relationship are inexact or statistical in nature.It seems that the relationship is approximately linear. \par
+
+Let us allow for the influence of all other variables affecting Q in a catch all variable u and write the demand function as:
+\[ Q=B_1+B_2P+u \]
+Where u is called the {\bf random error term}, or simply the {\bf error term}.We let u represent all those force that affect Q but are not explicitly introduced in the model as well as purely random forces. That equation is an example of a statistical or econometric model. More precisely, it is an example of what is known as a linear regression model. Our concern is to explain  the behavior of one variable, say Q in relation to the behavior of another variable, say, P, allowing for the fact that the relationship between the two is not exact because of the presence of other factors included in the error term, u. \par
+
+Notice that the econometric model is derived from the mathematical model, which shows that mathematical economics and econometrics are mutually complementary disciplines. This is clearly reflected in the definition of econometrics given at the outset.
+
+
+\subsection{Collection of data}
+There are three types of data that are generally available for empirical analysis.
+\begin{itemize}
+  \item Time serise
+  \item Cross-sectional
+  \item Pooled, that is, combination of time series and cross-sectional
+\end{itemize}
+
+{\bf Times series} data are collected over a period of time. Such data may be collected at regular intervals. These data may be quantitative in nature or qualitative. Qualitative variables, also called dummy or categorical variables, can be every bit as important as quantitative variables.\par
+
+{\bf Cross-sectional} are data on one or more variables collected at one point in time.\par
+
+In {\bf Pooled data} we have elements of both time series and cross-sectional data. For example, if we were to collect data on the unemployment rate for 10 countries for a period of 20 years, the data will constitute an example of pooled data - data on the unemployment rate for each country for the 20-year period will form time series data, whereas data on the unemployment rate for the 10 countries for any single year will be cross-sectional data.\par
+
+There is a special type of pooled data, the {\bf panel}, or {\bf longitudinal data} also called {\bf micropanel data}, in which the same cross-sectional unit. The panel data that results from repeatedly interviewing the same household at periodic intervals provide very useful information on the dynamics of household behavior.\par
+
+\subsection{Estimation of parameters of the chosen econometric model}
+From the data table, how do we estimate the parameters of the model, how do we find the numerical values, called the estimates of these parameters? Note that we have put the symbol $ \wedge $ on Q ($\hat{Q}$)(read as Q hat) to remind us that is the estimated demand function.
+\[\hat{Q}=76.05 - 3.88P\]
+Thus, if P increases by one dallar, the quantity demanded is expected to decrease on the average by 3.9 units. We say "on the average" because the presence of the error term u, as noted earlier, is likely to make the relationship somewhat imprecise. For example, corresponding to P = 1,  the observed Q is 70 but the one shown by the estimated (regression) line is $\approx 72.2$, an error of 2.2 units. In short, the econometric model, gives us the average relationship between Q and P - how on the average Q responds for a unit change in Q. The value of 76.05 suggests that on the average about 76 units of the commodity will be demanded if its price were zero.
+
+\subsection{Tests of the hypothesis derived from the model}
+The econometrician may want to find out whether the estimated model makes economic sense, whether the results obtained conform with the underlying economic theory. For example, in the demand function the coefficient of the price variable is expected to be negative. Is the hypothesis $B_2<0$ substantiated by the empirical result? Who would not generally desire a commodity if its price were zero?. If the hypothesis were $B_2=-0.4$, can we say that the observed value of -3.88 is practically the same as the hypothesized value? To test such a hypothesis, we need to use the tools of probability theory. The econometrician is concerned not only with estimating the parameters of the chosen model but may also be interested in finding out to what exent the fitted model conforms with the underlying economic theory.
+
+
+\subsection{Forecasting or prediction}
+In other words, the seller wants to forecast the quantity demanded if the price were \textdollar 4.50. If he plugs the value of \textdollar 4.50 for P. He would obtain $\hat{Q}=76.05-3.88(4.50)=58.59$ units. That is the forecast value of Q is about 59 units if the price is \textdollar 4.50. Under certain conditions one can use the estimated model for the purpose of prediction. 
+
+\begin{center}
+\begin{table}[h]
+\begin{tabular}{ll}
+\hline
+ Step & Example  \\ \hline
+ 1. Statement of theory & The law of demand  \\ 
+ 2. Mathematical model of theory & $Q=B_1+B_2P (e.g.)$  \\ 
+ 3. Econometric model of theory & $Q=B_1+B_2P+u$  \\ 
+ 4. Collection of data & Table 1-1  \\ 
+ 5. Parameter estimation & $\hat{Q}=76.05-3.88P$  \\ 
+ 6. Testing of hypothesis & Is $B_2<0$ ? (i.e., is the slope negative?)  \\ 
+ 7. Forecasting & What is Q if $P=4.50$  \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+We should point out that a similar procedure can be employed to analyze quantitative relationships between any variables. Accounting theory might suggest that the market rate is related to the accounting rate. This hypothesis can be tested by estimating a model similar to the linear regression model. Such a model based on teh cross-sectional data for 54 companies was estimated by Raymond Myers, giving the following results:
+
+\[\ \hat{Y}=0.84801+0.61033X \]
+
+Where Y is the average market return and X is the average yearly accounting rate, both averages computed over the period 1959 to 1974. As these results indicate, if the accounting rate increases by, say, 1 percent, on the average the market rate increases by $ \approx 0.6 $ of 1 percent. As a noneconomic example, suppose a criminologist is interested in studying the relationship between the population density and the robbery rate. For this purpose, suppose he or she obtained a sample of 16 medium-sized cities and obtained the following regression results:
+
+\[\ \hat{Y}=182.97+0.2616X \]
+
+where Y = robbery rate and X = population density of the city. These results seems to suggest that the higher the population density, the higher the crime rate, other things remaining the same. The criminologist has to determine the reasons for the positive association between the robbery rate and the population density.
+
+
+% ---------------------- Template
+% -----------------------본문
+%\section{chapter1}
+%\subsection{sub chapter 1-1}
+%본문
+%\clearpage
+% ----------------------
+% ----------------------Figures
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=5in]{ACR-fig1}
+%\caption{The PMF for R} \label{ACR-fig1}
+%\end{center}
+%\end{figure}
+% ----------------------
+
+
+% ----------------------Reference
+\begin{thebibliography}{}
+\bibitem[Gujarati(1992)]{gujarati}Gujarati (2014). {\it Essentials of econometrics} , McGraw-Hill, NY
+\end{thebibliography}
+% ----------------------
+\end{document}
